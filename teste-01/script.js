@@ -19,6 +19,11 @@ function addTask() {
     priority: 1,
   };
 
+  if (tasks.length == 0) {
+    let divEmptyTasks = document.querySelector("#empty-tasks");
+    divEmptyTasks.classList.add("hidden");
+  }
+
   taskTextSelector.value = "";
 
   tasks.push(task);
@@ -38,6 +43,10 @@ function deleteTask(key) {
     const taskDiv = document.querySelector(`[data-key='task-${key}']`);
     taskDiv.remove();
     tasks = tasks.filter(task => task.key !== key);
+    if (tasks.length == 0) {
+      let divEmptyTasks = document.querySelector("#empty-tasks");
+      divEmptyTasks.classList.remove("hidden");
+    }
 }
 
 function rerenderTaskHtml(task) {

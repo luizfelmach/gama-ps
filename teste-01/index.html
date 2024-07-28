@@ -18,11 +18,60 @@
 
   <body>
     <div id="root" class="flex">
-      <aside class="w-96 h-vh bg-white-2 rounded" id="menu-desktop">
-        Aside desktop
+      <aside class="w-96 h-vh bg-white-2 rounded max-w-80" id="menu-desktop">
+        <header class="p-4">
+          <h1 class="font-medium text-brand">
+            GAMA<span class="font-normal text-fg">todo</span>
+          </h1>
+        </header>
+
+        <nav class="p-4">
+          <h5 class="font-medium text-lg">Tarefas</h5>
+          <div class="flex flex-column">
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/calendar.png"/>
+              <p class="flex-1 p-2 underline-hover">Hoje</p>
+              <p class="bg-white-3 size-6 rounded-full flex items-center justify-center">1</p>
+            </div>
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/clock.png"/>
+              <p class="flex-1 p-2 underline-hover">Pendentes</p>
+              <p class="bg-white-3 size-6 rounded-full flex items-center justify-center">0</p>
+            </div>
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/check.png"/>
+              <p class="flex-1 p-2 underline-hover">Finalizados</p>
+              <p class="bg-white-3 size-6 rounded-full flex items-center justify-center">0</p>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="p-4">
+          <h5 class="font-medium text-lg">Listas</h5>
+          <div class="flex flex-column">
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/add-task.png"/>
+              <p class="flex-1 p-2 underline-hover">Adicionar lista</p>
+            </div>
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/list.png"/>
+              <p class="flex-1 p-2 underline-hover">Lista 1</p>
+            </div>
+            <div class="flex items-center cursor-pointer">
+              <img alt="Hoje" class="size-6" src="assets/list.png"/>
+              <p class="flex-1 p-2 underline-hover">Compras</p>
+            </div>
+          </div>
+        </nav>
       </aside>
 
-      <aside class="h-16 bg-white-2" id="menu-mobile">Aside mobile</aside>
+      <aside class="h-16 bg-white-2" id="menu-mobile">
+        <header class="p-4">
+          <h1 class="font-medium text-brand">
+            GAMA<span class="font-normal text-fg">todo</span>
+          </h1>
+        </header>
+      </aside>
 
       <main class="flex-1 mx-auto max-w-3xl bold p-4 mt-12">
         <section class="py-4">
@@ -41,7 +90,13 @@
           </button>
         </section>
 
-        <div id="tasks"></div>
+        <div id="tasks">
+
+
+          <div class="flex items-center justify-center" id="empty-tasks">
+            <img src="assets/empty-tasks.png" alt="Nenhuma tarefa ainda.">
+          </div>
+        </div>
       </main>
     </div>
   </body>
