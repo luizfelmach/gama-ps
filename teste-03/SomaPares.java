@@ -1,10 +1,19 @@
+import java.util.Scanner;
+
 public class SomaPares {
 
     public static void main(String[] args) {
 
-        int[] numeros = { 1, 4, 5, 2, 7, 9, -1 };
+        Scanner sc = new Scanner(System.in);
 
-        int valor_soma = 6;
+        int n = sc.nextInt(); // Quantidade de elementos
+        int valor_soma = sc.nextInt(); // Valor da soma desejado
+        
+        int[] numeros = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            numeros[i] = sc.nextInt();
+        }
 
         for (int i = 0; i < numeros.length; i++) {
             for (int j = i + 1; j < numeros.length; j++) {
@@ -14,5 +23,7 @@ public class SomaPares {
                 }
             } 
         }
+
+        sc.close();
     }
 }

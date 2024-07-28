@@ -1,12 +1,27 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class SomaParesOtimizado {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer, Integer> count = new HashMap<>();
 
-        int[] numeros = { 1, 4, 5, 2, 7, 9, -1 };
+        int n = sc.nextInt(); // Quantidade de elementos
+        int valor_soma = sc.nextInt(); // Valor da soma desejado
+        
+        int[] numeros = new int[n];
 
-        int valor_soma = 6;
+        for (int i = 0; i < n; i++) {
+            numeros[i] = sc.nextInt();
+
+            if (count.containsKey(numeros[i])) {
+                count.put(numeros[i], count.get(numeros[i]) + 1);
+            } else {
+                count.put(numeros[i], 1);
+            }
+        }
 
         Arrays.sort(numeros);
 
@@ -14,11 +29,14 @@ public class SomaParesOtimizado {
             int searching = valor_soma - numeros[i];
             int index = Arrays.binarySearch(numeros, i+1, numeros.length, searching);
 
-            if (index == i) continue;
-
             if (index >= 0) {
-                System.out.format("Pares: (%d, %d)\n", numeros[i], numeros[index]);
+                int freq = count.get(numeros[index]);
+                while (freq--> 0) {
+                    System.out.format("Pares: (%d, %d)\n", numeros[i], numeros[index]);
+                }
             }
         }
+
+        sc.close();
     }
 }
