@@ -1,0 +1,277 @@
+:root {
+  --main-bg-color: #f9f9f9;
+  --sec-bg-color: #f3f3f3;
+  --main-foreground-color: #333;
+  --primary-font: "Roboto", sans-serif;
+  --round: 1rem;
+}
+
+* {
+  background-color: var(--main-bg-color);
+  color: var(--main-foreground-color);
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+  text-decoration: none;
+  box-sizing: border-box;
+  color: inherit;
+  background-color: inherit;
+}
+
+.line-through {
+    text-decoration-line: line-through;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 2rem;
+  line-height: 1.75rem;
+}
+
+.bg-white-1 {
+  background-color: var(--main-bg-color);
+}
+
+.bg-white-2 {
+  background-color: var(--sec-bg-color);
+}
+
+.bg-white-2 {
+  background-color: var(--sec-bg-color);
+}
+
+.bg-red {
+  background-color: rgb(255, 144, 144);
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-aqua {
+  background-color: aqua;
+}
+
+.rounded {
+  border-radius: var(--round);
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-vh {
+  height: 100vh;
+}
+
+.w-128 {
+  width: 32rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.p-1 {
+  padding: 0.2rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+#button-1 {
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+#button-1::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("assets/trash.svg");
+}
+
+#button-add-task {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #32b4c8;
+}
+
+#button-add-task:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+#button-add-task:hover {
+  background-color: #1fa2b6;
+}
+
+#button-add-task::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("assets/add-task.png");
+}
+
+#checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  vertical-align: middle;
+  border: 1px solid black;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#checkbox:checked {
+  appearance: auto;
+  -webkit-appearance: auto;
+  vertical-align: middle;
+  clip-path: circle(50% at 50% 50%);
+  background-color: blue;
+}
+
+#icon-date::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("assets/calendar.png");
+}
+
+#task-text {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  text-align: left;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--sec-bg-color);
+  height: 3rem;
+}
+
+
+@media (max-width: 900px) {
+  #root {
+    display: block;
+  }
+  #menu-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  #menu-mobile {
+    display: none;
+  }
+}
